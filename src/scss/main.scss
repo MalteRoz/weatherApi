@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin border {
+    border-bottom: 1.5px solid black;
+}
+
+body {
+    background: radial-gradient(circle, #e3f3f8, #abdbe3, #7bb6bd);
+
+}
+
+#app {
+    height: 100vh;
+    padding: 0 2rem;
+}
+
+header {
+    nav {
+        @include flex(row,space-between,center);
+        padding: 2rem;
+        width: 100%;
+
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .searchContainer {
+            input {
+                width: 4rem;
+                background: none;
+                border: none;
+                border-bottom: 1px solid black;
+            }
+    
+            button {
+                background: none;
+                border: none;
+            }
+        }
+       
+    }
+}
+
+.cityInfo {
+    @include border;
+    padding-bottom: 2rem;
+
+    .city {
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .weekday {
+        font-weight: bold;
+    }
+}
+
+.tempInfo {
+    @include border;
+    padding: 5rem 0;
+    .temp {
+        font-weight: bold;
+        font-size: 6rem;
+    }
+}
+
+
+.weatherFacts {
+    @include flex(row,space-between,start);
+    padding: 2rem 0;
+    @include border;
+
+    .WeatherFactsCard {
+        @include flex(column,space-between,center);
+        width: 100%;
+        
+        img {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+}
+
+.forecastContainer {
+    @include flex(row,center,center);
+    @include border;
+    padding: 2rem 0;
+    .dayCard {
+        width: 100%;
+        @include flex(column,center,center)
+    }
+}
+
+
+footer {
+    @include border;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    position: static;
+
+    p {
+        font-size: 0.75rem;
+        color: black;
+    }
+
+    a {
+        color: black;
+        margin-top: 0.5rem;
+        cursor: pointer;
+    }
+}
