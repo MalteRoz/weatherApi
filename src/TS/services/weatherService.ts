@@ -3,7 +3,6 @@ import { GeoResponse, Weather } from "../models/interface";
 import { createHtml } from "../functions/functions";
 
 const searchField = document.querySelector(".searchField") as HTMLInputElement;
-const apiKey = "2b29ffda10eac86ad89991e5ce7c66a5";
 
 let geoData: GeoResponse[] = [];
 let weatherData: Weather[] = [];
